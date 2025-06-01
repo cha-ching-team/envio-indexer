@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 11155420
+  start_block: 0
+  contracts:
+  - name: ChaChing
+    address:
+    - 0x2F6DcB84CDba09C749Df910a2d093fccfd4319bD
+    handler: src/EventHandlers.ts
+    events:
+    - event: BountyClaimed(bytes32 bountyId, address recipient, uint256 amount)
+    - event: BountyToppedUp(string issueUrl, address token, uint256 amount)
+    - event: NewBountyRegistered((string,uint256,uint8,address,uint256) bounty)
+    - event: OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+unordered_multichain_mode: true

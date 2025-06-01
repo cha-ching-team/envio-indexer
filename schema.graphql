@@ -1,0 +1,35 @@
+type ChaChing_BountyClaimed {
+  id: ID!
+  bountyId: String!
+  recipient: String!
+  amount: BigInt!
+}
+
+type ChaChing_BountyToppedUp {
+  id: ID!
+  issueUrl: String!
+  token: String!
+  amount: BigInt!
+}
+
+type ChaChing_NewBountyRegistered {
+  id: ID!
+  bounty_0: String!
+  bounty_1: BigInt!
+  bounty_2: BigInt!
+  bounty_3: String!
+  bounty_4: BigInt!
+}
+
+type ChaChing_OwnershipTransferStarted {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type ChaChing_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
